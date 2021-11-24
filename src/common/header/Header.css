@@ -1,0 +1,6 @@
+.header {
+    background: #ff7f7f;
+    height: 35px;
+    animation: pulse 8s infinite;
+    text-align: left;
+}
