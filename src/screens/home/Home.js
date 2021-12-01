@@ -24,37 +24,37 @@ class Home extends Component {
     constructor() {
         super();
         this.state = {
-            movieName: "",
-            upcomingMovies: [],
-            releasedMovies: [],
-            genres: [],
-            artists: [],
-            genresList: [],
-            artistsList: [],
-            releaseDateStart: "",
-            releaseDateEnd: ""
+            movieName : "",
+            upcomingMovies : [],
+            releasedMovies : [],
+            genres : [],
+            artists : [],
+            genresList : [],
+            artistsList : [],
+            releaseDateStart : "",
+            releaseDateEnd : ""
         }
     }
 
 
     movieNameChangeHandler = event => {
-        this.setState({ movieName: event.target.value });
+        this.setState({ movieName : event.target.value });
     }
 
     genreSelectHandler = event => {
-        this.setState({ genres: event.target.value });
+        this.setState({ genres : event.target.value });
     }
 
     artistSelectHandler = event => {
-        this.setState({ artists: event.target.value });
+        this.setState({ artists : event.target.value });
     }
 
     releaseDateStartHandler = event => {
-        this.setState({ releaseDateStart: event.target.value });
+        this.setState({ releaseDateStart : event.target.value });
     }
 
     releaseDateEndHandler = event => {
-        this.setState({ releaseDateEnd: event.target.value });
+        this.setState({ releaseDateEnd : event.target.value });
     }
 
     movieClickHandler = (movieId) => {
@@ -69,7 +69,7 @@ class Home extends Component {
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 that.setState({
-                    upcomingMovies: JSON.parse(this.responseText).movies
+                    upcomingMovies : JSON.parse(this.responseText).movies
                 });
             }
         });
@@ -84,7 +84,7 @@ class Home extends Component {
         xhrReleased.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 that.setState({
-                    releasedMovies: JSON.parse(this.responseText).movies
+                    releasedMovies : JSON.parse(this.responseText).movies
                 });
             }
         });
@@ -99,7 +99,7 @@ class Home extends Component {
         xhrGenres.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 that.setState({
-                    genresList: JSON.parse(this.responseText).genres
+                    genresList : JSON.parse(this.responseText).genres
                 });
             }
         });
@@ -114,7 +114,7 @@ class Home extends Component {
         xhrArtists.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 that.setState({
-                    artistsList: JSON.parse(this.responseText).artists
+                    artistsList : JSON.parse(this.responseText).artists
                 });
             }
         });
@@ -148,7 +148,7 @@ class Home extends Component {
         xhrFilter.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 that.setState({
-                    releasedMovies: JSON.parse(this.responseText).movies
+                    releasedMovies : JSON.parse(this.responseText).movies
                 });
             }
         });
@@ -185,7 +185,7 @@ class Home extends Component {
                                     <img src={movie.poster_url} className="movie-poster" alt={movie.title} />
                                     <GridListTileBar
                                         title={movie.title}
-                                        subtitle={<span>Release Date: {new Date(movie.release_date).toDateString()}</span>}
+                                        subtitle={<span>Release Date : {new Date(movie.release_date).toDateString()}</span>}
                                     />
                                 </GridListTile>
                             ))}
@@ -196,7 +196,7 @@ class Home extends Component {
                             <CardContent>
                                 <FormControl className={classes.formControl}>
                                     <Typography className={classes.title} color="textSecondary">
-                                        FIND MOVIES BY:
+                                        FIND MOVIES BY :
                                     </Typography>
                                 </FormControl>
 
@@ -247,7 +247,7 @@ class Home extends Component {
                                         label="Release Date Start"
                                         type="date"
                                         defaultValue=""
-                                        InputLabelProps={{ shrink: true }}
+                                        InputLabelProps={{ shrink : true }}
                                         onChange={this.releaseDateStartHandler}
                                     />
                                 </FormControl>
@@ -258,7 +258,7 @@ class Home extends Component {
                                         label="Release Date End"
                                         type="date"
                                         defaultValue=""
-                                        InputLabelProps={{ shrink: true }}
+                                        InputLabelProps={{ shrink : true }}
                                         onChange={this.releaseDateEndHandler}
                                     />
                                 </FormControl>
@@ -278,32 +278,32 @@ class Home extends Component {
 }
 
 const styles = theme => ({
-    root: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.paper
+    root : {
+        flexGrow : 1,
+        backgroundColor : theme.palette.background.paper
     },
-    upcomingMoviesHeading: {
-        textAlign: 'center',
-        background: '#ff9999',
-        padding: '8px',
-        fontSize: '1rem'
+    upcomingMoviesHeading : {
+        textAlign : 'center',
+        background : '#ff9999',
+        padding : '8px',
+        fontSize : '1rem'
     },
-    gridListUpcomingMovies: {
-        flexWrap: 'nowrap',
-        transform: 'translateZ(0)',
-        width: '100%'
+    gridListUpcomingMovies : {
+        flexWrap : 'nowrap',
+        transform : 'translateZ(0)',
+        width : '100%'
     },
-    gridListMain: {
-        transform: 'translateZ(0)',
-        cursor: 'pointer'
+    gridListMain : {
+        transform : 'translateZ(0)',
+        cursor : 'pointer'
     },
-    formControl: {
-        margin: theme.spacing.unit,
-        minWidth: 240,
-        maxWidth: 240
+    formControl : {
+        margin : theme.spacing.unit,
+        minWidth : 240,
+        maxWidth : 240
     },
-    title: {
-        color: theme.palette.primary.light,
+    title : {
+        color : theme.palette.primary.light,
     }
 });
 

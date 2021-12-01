@@ -13,35 +13,35 @@ class Details extends Component {
     constructor() {
         super();
         this.state = {
-            movie: {
-                genres: [],
-                trailer_url: "",
-                artists: []
+            movie : {
+                genres : [],
+                trailer_url : "",
+                artists : []
             },
-            starIcons: [{
-                id: 1,
-                stateId: "star1",
-                color: "black"
-            },
-            {
-                id: 2,
-                stateId: "star2",
-                color: "black"
+            starIcons : [{
+                id : 1,
+                stateId : "star1",
+                color : "black"
             },
             {
-                id: 3,
-                stateId: "star3",
-                color: "black"
+                id : 2,
+                stateId : "star2",
+                color : "black"
             },
             {
-                id: 4,
-                stateId: "star4",
-                color: "black"
+                id : 3,
+                stateId : "star3",
+                color : "black"
             },
             {
-                id: 5,
-                stateId: "star5",
-                color: "black"
+                id : 4,
+                stateId : "star4",
+                color : "black"
+            },
+            {
+                id : 5,
+                stateId : "star5",
+                color : "black"
             }]
         }
     }
@@ -53,7 +53,7 @@ class Details extends Component {
         xhrMovie.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 that.setState({
-                    movie: JSON.parse(this.responseText)
+                    movie : JSON.parse(this.responseText)
                 });
             }
         });
@@ -80,16 +80,16 @@ class Details extends Component {
             }
             starIconList.push(starNode);
         }
-        this.setState({ starIcons: starIconList });
+        this.setState({ starIcons : starIconList });
     }
 
     render() {
         let movie = this.state.movie;
         const opts = {
-            height: '300',
-            width: '700',
-            playerVars: {
-                autoplay: 1
+            height : '300',
+            width : '700',
+            playerVars : {
+                autoplay : 1
             }
         }
         return (
@@ -112,24 +112,24 @@ class Details extends Component {
                         <br />
                         <div>
                             <Typography>
-                                <span className="bold">Genres: </span> {movie.genres.join(', ')}
+                                <span className="bold">Genres : </span> {movie.genres.join(', ')}
                             </Typography>
                         </div>
                         <div>
-                            <Typography><span className="bold">Duration:</span> {movie.duration} </Typography>
+                            <Typography><span className="bold">Duration :</span> {movie.duration} </Typography>
                         </div>
                         <div>
-                            <Typography><span className="bold">Release Date:</span> {new Date(movie.release_date).toDateString()} </Typography>
+                            <Typography><span className="bold">Release Date :</span> {new Date(movie.release_date).toDateString()} </Typography>
                         </div>
                         <div>
-                            <Typography><span className="bold"> Rating:</span> {movie.critics_rating}  </Typography>
+                            <Typography><span className="bold"> Rating :</span> {movie.critics_rating}  </Typography>
                         </div>
                         <div className="marginTop16">
-                            <Typography><span className="bold">Plot:</span> <a href={movie.wiki_url}>(Wiki Link)</a> {movie.storyline} </Typography>
+                            <Typography><span className="bold">Plot :</span> <a href={movie.wiki_url}>(Wiki Link)</a> {movie.storyline} </Typography>
                         </div>
                         <div className="trailerContainer">
                             <Typography>
-                                <span className="bold">Trailer:</span>
+                                <span className="bold">Trailer :</span>
                             </Typography>
                             <YouTube
                                 videoId={movie.trailer_url.split("?v=")[1]}
@@ -141,7 +141,7 @@ class Details extends Component {
 
                     <div className="rightDetails">
                         <Typography>
-                            <span className="bold">Rate this movie: </span>
+                            <span className="bold">Rate this movie : </span>
                         </Typography>
                         {this.state.starIcons.map(star => (
                             <StarBorderIcon
@@ -153,7 +153,7 @@ class Details extends Component {
 
                         <div className="bold marginBottom16 marginTop16">
                             <Typography>
-                                <span className="bold">Artists:</span>
+                                <span className="bold">Artists :</span>
                             </Typography>
                         </div>
                         <div className="paddingRight">
